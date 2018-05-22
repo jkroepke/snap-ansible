@@ -4,19 +4,28 @@ summary: Using Ansible w/ bundled Python without misconfigure the systems python
 description: |
   This snap is provides a predefined environment for Ansible runs. It includes some additional pip for example docker-py.
 
+type: app
+icon: snap/ansible.png
 grade: devel
 confinement: devmode
 
 apps:
   ansible:
     command: bin/ansible
+    plugs: [account-control, home, docker, network, hardware-observe, process-control]
   ansible-playbook:
     command: bin/ansible-playbook
+    plugs: [account-control, home, docker, network, hardware-observe, process-control]
   ansible-vault:
     command: bin/ansible-vault
+    plugs: [home]
 
 parts:
   requirements:
     plugin: python
     python-version: python2
     requirements: requirements.txt
+    build-packages:
+    - libmpeg2-4-dev
+    - libogg-dev
+    - libvorbis-dev
