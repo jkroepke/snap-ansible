@@ -4,7 +4,7 @@ summary: Using Ansible w/ bundled Python without misconfigure the systems python
 description: |
   This snap is provides a predefined environment for Ansible runs. It includes some additional pip for example docker-py.
 
-type: core
+type: os
 icon: snap/ansible.png
 grade: devel
 confinement: classic
