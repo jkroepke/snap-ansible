@@ -4,33 +4,26 @@ summary: Using Ansible w/ bundled Python without misconfigure the systems python
 description: |
   This snap is provides a predefined environment for Ansible runs. It includes some additional pip for example docker-py.
 
-type: app
+type: core
 icon: snap/ansible.png
 grade: devel
-confinement: devmode
+confinement: classic
 
 apps:
   ansible:
     command: bin/ansible
-    plugs: [account-control, home, docker, network, hardware-observe, process-control]
   ansible-galaxy:
     command: bin/ansible-galaxy
-    plugs: [account-control, home, docker, network, hardware-observe, process-control]
   ansible-playbook:
     command: bin/ansible-playbook
-    plugs: [account-control, home, docker, network, hardware-observe, process-control]
   ansible-connection:
     command: bin/ansible-connection
-    plugs: [account-control, home, docker, network, hardware-observe, process-control]
   ansible-inventory:
     command: bin/ansible-inventory
-    plugs: [account-control, home, docker, network, hardware-observe, process-control]
   ansible-pull:
     command: bin/ansible-playbook
-    plugs: [account-control, home, docker, network, hardware-observe, process-control]
   ansible-vault:
     command: bin/ansible-vault
-    plugs: [account-control, home, docker, network, hardware-observe, process-control]
 
 parts:
   requirements:
